@@ -158,9 +158,9 @@ public class BSTree{
     }
   }//Recursively prints each node inord traversal.
   public static void display(Track here,PrintWriter output) throws Exception{
-    int count =0;
+    output.format("%-70s%-20s%-15s%-15s\n","Track Name","Artist Name","Average number if plays in this quarter /week","Average number of plays for artist /week");
     if(here.left==null&&here.right==null){
-      output.format("%-70s%-20s%-15.2f%-15.2f\n",here.track,here.artist,here.avgPlays,here.avgArtist);
+      output.format("%-70s%-20s%-15.2f%-15.2f\n",here.track,here.artist,here.avgPlays/12,here.avgArtist/12);
       return;
     }
     if(here.left!=null)
